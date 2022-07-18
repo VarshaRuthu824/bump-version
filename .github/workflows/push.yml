@@ -8,22 +8,9 @@ on:
 jobs:
   bump-version:
     name: Bump package version
-    if: "!contains(github.event.head_commit.message, 'Bump version')"
     runs-on: ubuntu-20.04
     steps:
-    - name: actions/checkout
-      uses: actions/checkout@v2
-      with:
-          persist-credentials: false
-    - name: current_version
-      run: echo "current_version=$(grep '# version' action.yml | cut -d ' ' -f3)" >> $GITHUB_ENV
-    - name: FragileTech/bump-version
-      uses: FragileTech/bump-version@main
-      with:
-        current_version: "${{ env.current_version }}"
-        files: action.yml
-        commit_name: Fragile-bot
-        commit_email: bot@fragile.tech
-        login: fragile-bot
-        token: "${{ secrets.BOT_REPO_PUSH }}"
+    - name: buzzinga
+      run: echo Buzzinga
+ 
       
